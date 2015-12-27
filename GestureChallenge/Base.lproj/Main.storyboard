@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,22 +16,27 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-Yy-Ukt">
-                                <rect key="frame" x="159" y="306" width="56" height="56"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-Yy-Ukt">
+                                <rect key="frame" x="249" y="249" width="102" height="102"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eq1-Yy-Ukt" secondAttribute="height" multiplier="1:1" id="sIO-Yc-SDN"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eq1-Yy-Ukt" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.17" id="iPD-mU-Evy"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="aGq-uj-M1q" appends="YES" id="f46-VW-ffI"/>
                             <outletCollection property="gestureRecognizers" destination="6Ud-YM-qcZ" appends="YES" id="ZKf-Z0-nC1"/>
                             <outletCollection property="gestureRecognizers" destination="zR5-2m-vx2" appends="YES" id="a8L-JU-I57"/>
                         </connections>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="doubleTap" destination="zR5-2m-vx2" id="rU8-wY-roF"/>
                         <outlet property="floatingView" destination="eq1-Yy-Ukt" id="4pV-qI-Ege"/>
