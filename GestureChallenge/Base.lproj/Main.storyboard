@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-Yy-Ukt">
+                                <rect key="frame" x="159" y="306" width="56" height="56"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aGq-uj-M1q" appends="YES" id="f46-VW-ffI"/>
+                            <outletCollection property="gestureRecognizers" destination="6Ud-YM-qcZ" appends="YES" id="ZKf-Z0-nC1"/>
+                            <outletCollection property="gestureRecognizers" destination="zR5-2m-vx2" appends="YES" id="a8L-JU-I57"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="doubleTap" destination="zR5-2m-vx2" id="rU8-wY-roF"/>
+                        <outlet property="floatingView" destination="eq1-Yy-Ukt" id="4pV-qI-Ege"/>
+                        <outlet property="singleTap" destination="aGq-uj-M1q" id="NRn-XH-sqf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aGq-uj-M1q">
+                    <connections>
+                        <action selector="manageSingleTap:" destination="vXZ-lx-hvc" id="tqQ-ic-chY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="zR5-2m-vx2">
+                    <connections>
+                        <action selector="manageDoubleTap:" destination="vXZ-lx-hvc" id="fyA-Gn-NEg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Ud-YM-qcZ">
+                    <connections>
+                        <action selector="manageLongPress:" destination="vXZ-lx-hvc" id="07b-5E-Inw"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="92.5" y="146.5"/>
+        </scene>
+    </scenes>
+</document>
